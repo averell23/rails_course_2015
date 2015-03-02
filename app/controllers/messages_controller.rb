@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    render text: "Hello World"
+    @messages = Message.all.limit(5)
   end
 
   def show
