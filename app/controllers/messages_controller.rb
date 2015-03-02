@@ -10,4 +10,9 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
   end
+
+  def create # Create a new thing
+    @message = Message.create!(params.require(:message).permit(:message_text))
+    redirect_to action: :index 
+  end
 end
