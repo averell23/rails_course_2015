@@ -6,4 +6,8 @@ class MessagesController < ApplicationController
   def show
     @message = "This is message #{params[:id]}"
   end
+
+  def new
+    @message = Message.new
+  end
 end
