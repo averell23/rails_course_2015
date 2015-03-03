@@ -1,5 +1,7 @@
+<%= link_to "Overview", messages_path %>
+
 <h1><%= @message.message_text %></h1>
 
 <p>
-  Written by <%= @message.user.try(:email) %> <%= time_ago_in_words @message.created_at %> ago.
+  Written by <%= user_name_for @message %> <%= time_ago_in_words @message.created_at %> ago.
 </p>

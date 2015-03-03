@@ -4,7 +4,7 @@
 
 <% for message in @messages %>
  <p>
-   <i><%= message.user.try(:email) %></i> 
+   <i><%= user_name_for message %></i> 
    <b><%= time_ago_in_words message.created_at %> ago:</b>
     <%= link_to message.message_text, message_path(message) %></p>
 <% end %>
