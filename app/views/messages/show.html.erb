@@ -1,6 +1,5 @@
-<h1>Hello World</h1>
+<h1><%= @message.message_text %></h1>
 
 <p>
-  Message:
-  <%= @message %>
+  Written by <%= @message.user.try(:email) %> <%= time_ago_in_words @message.created_at %> ago.
 </p>

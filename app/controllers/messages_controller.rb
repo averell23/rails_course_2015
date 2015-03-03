@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = "This is message #{params[:id]}"
+    @message = Message.find(params[:id])
   end
 
   def new
@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
 
   def create # Create a new thing
     @message = Message.new(params.require(:message).permit(:message_text))
+    @message.user = current_user
     if @message.save
       redirect_to action: :index
      else
