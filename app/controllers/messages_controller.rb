@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+
+  before_action :authenticate_user!, except: :index
+  # before_action :do_something
+
   def index
     @messages = Message.limit(15).order(created_at: :desc)
   end
@@ -18,5 +22,11 @@ class MessagesController < ApplicationController
      else
        render action: :new
      end
+  end
+
+  private 
+
+  def do_something
+    render text: "Gotcha"
   end
 end
