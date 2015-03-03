@@ -2,5 +2,6 @@
 
 <%= form_for @message do |f|  %>
   <%= f.text_field :message_text %>
+  <%= @message.errors[:message_text].join(', ') %>
   <%= f.submit "Go!" %>
 <% end %>
