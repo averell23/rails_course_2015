@@ -1,5 +1,7 @@
 <h1>All messages</h1>
 
+<%= link_to "Create new message",  new_message_url %>
+
 <% for message in @messages %>
  <p><b><%= time_ago_in_words message.created_at %> ago:</b> <%= message.message_text %></p>
 <% end %>
